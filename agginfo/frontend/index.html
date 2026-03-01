@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本統計アグリゲーター</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>日本統計アグリゲーター</h1>
+        <p>政府統計（e-Stat）をテーマ・都道府県で選択表示</p>
+      </header>
+
+      <section class="controls">
+        <label>
+          テーマ
+          <select id="theme">
+            <option value="population">人口</option>
+            <option value="employment">雇用</option>
+            <option value="households">世帯</option>
+            <option value="cpi">消費者物価</option>
+            <option value="tourism">観光</option>
+            <option value="wage">賃金</option>
+          </select>
+        </label>
+        <label>
+          都道府県
+          <select id="pref">
+            <option value="">全国</option>
+            <option value="01">01 北海道</option>
+            <option value="02">02 青森県</option>
+            <option value="03">03 岩手県</option>
+            <option value="04">04 宮城県</option>
+            <option value="05">05 秋田県</option>
+            <option value="06">06 山形県</option>
+            <option value="07">07 福島県</option>
+            <option value="08">08 茨城県</option>
+            <option value="09">09 栃木県</option>
+            <option value="10">10 群馬県</option>
+            <option value="11">11 埼玉県</option>
+            <option value="12">12 千葉県</option>
+            <option value="13">13 東京都</option>
+            <option value="14">14 神奈川県</option>
+            <option value="15">15 新潟県</option>
+            <option value="16">16 富山県</option>
+            <option value="17">17 石川県</option>
+            <option value="18">18 福井県</option>
+            <option value="19">19 山梨県</option>
+            <option value="20">20 長野県</option>
+            <option value="21">21 岐阜県</option>
+            <option value="22">22 静岡県</option>
+            <option value="23">23 愛知県</option>
+            <option value="24">24 三重県</option>
+            <option value="25">25 滋賀県</option>
+            <option value="26">26 京都府</option>
+            <option value="27">27 大阪府</option>
+            <option value="28">28 兵庫県</option>
+            <option value="29">29 奈良県</option>
+            <option value="30">30 和歌山県</option>
+            <option value="31">31 鳥取県</option>
+            <option value="32">32 島根県</option>
+            <option value="33">33 岡山県</option>
+            <option value="34">34 広島県</option>
+            <option value="35">35 山口県</option>
+            <option value="36">36 徳島県</option>
+            <option value="37">37 香川県</option>
+            <option value="38">38 愛媛県</option>
+            <option value="39">39 高知県</option>
+            <option value="40">40 福岡県</option>
+            <option value="41">41 佐賀県</option>
+            <option value="42">42 長崎県</option>
+            <option value="43">43 熊本県</option>
+            <option value="44">44 大分県</option>
+            <option value="45">45 宮崎県</option>
+            <option value="46">46 鹿児島県</option>
+            <option value="47">47 沖縄県</option>
+          </select>
+        </label>
+        <button id="loadBtn">表示</button>
+      </section>
+
+      <section>
+        <p id="status">条件を選んで「表示」を押してください。</p>
+        <div class="chart-card">
+          <h2>直近20年の推移（折れ線）</h2>
+          <div id="chart" class="line-chart" aria-live="polite"></div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>出典</th>
+              <th>テーマ</th>
+              <th>指標</th>
+              <th>都道府県</th>
+              <th>値</th>
+              <th>単位</th>
+              <th>年</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
